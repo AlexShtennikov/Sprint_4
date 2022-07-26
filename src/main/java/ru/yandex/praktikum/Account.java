@@ -9,12 +9,17 @@ public class Account {
 
     public boolean checkNameToEmboss() {
 
-        //Проверка длины
-        if (name.length() < 3 && name.length() > 19) {
+        //Проверка, что длина не менее 3х символов
+        if (name.length() < 3) {
             return false;
         }
 
-        //Проверка одного пробела
+        //Проверка, что длина не более 19ти символов
+        if (name.length() > 19) {
+            return false;
+        }
+
+        //Проверка, что пробел один
         if (name.indexOf(" ") != name.lastIndexOf(" ")) {
             return false;
         }
@@ -22,7 +27,6 @@ public class Account {
         //Проверка, что пробел не в начале строки
         if (name.indexOf(" ",0) == 0) {
             return false;
-
         }
 
         //Проверка, что пробел не в конце строки
